@@ -1,14 +1,21 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  background-color: purple;
+  background-color: orangered;
+  padding: 20px;
 }
 .name {
   font-family: "Kaushan Script", cursive;
-  color: purple;
+  color: green;
   font-size: 30px;
-  background-color: thistle;
+  background-color: black;
 }
 body {
-  background-color: skyblue;
+  background-color: red;
+}
+span{
+  color: white;
+}
+br{
+  background-color: orangered;
 }
