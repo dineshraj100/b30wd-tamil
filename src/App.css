@@ -1,7 +1,7 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  background-color: orangered;
+  background-color: rgb(173, 0, 0);
   padding: 20px;
 }
 .name {
@@ -10,12 +10,15 @@
   font-size: 30px;
   background-color: black;
 }
-body {
-  background-color: red;
-}
 span{
   color: white;
 }
-br{
-  background-color: orangered;
+button{
+  height: 100px;
+  width: 100px;
+  font-size: 30px;
+  border-radius: 30%;
+}
+#header{
+  color: white;
 }

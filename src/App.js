@@ -55,9 +55,9 @@ export default function App() {
 ]
   return (
     <div className="App">
-      <br></br><br></br>
+      <h2 id="header">Movie Review</h2>
       {movie.map(({ name, poster,summary,cast,director,music,year,rating }) => (
-        <Name name={name} poster={poster} summary={summary} cast={cast} director={director} music={music} year={year} rating={rating}  />
+        <Name name={name} poster={poster} summary={summary} cast={cast} director={director} music={music} year={year} rating={rating} />
       ))}
       <br></br>
     </div>
@@ -75,7 +75,20 @@ function Name({ name, poster,summary,cast,director,music,year,rating }) {
       <ul>Director: <span>{director}</span></ul>
       <ul>Music By: <span>{music}</span></ul>
       <ul>Rating (in imdb): <span>{rating}</span></ul>
-      
+      <Counter/>
+      <hr></hr>
     </div>
+  );
+}
+function Counter(){
+  const[like, setLike] = useState(0);
+  const[dislike, setDislike]= useState(0);
+  return(
+    <div>
+      <button onClick={()=> setLike(like+1)}>👍🏻 {like}</button>
+      <span>................................................................</span>
+      <button onClick={()=> setDislike(dislike+1)}>👎🏻 {dislike}</button>
+      <br></br>
+    </div> 
   );
 }
