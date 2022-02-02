@@ -1,14 +1,14 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  background-color: rgb(173, 0, 0);
+  background-color: rgb(223, 222, 222);
   padding: 20px;
 }
 .name {
   font-family: "Kaushan Script", cursive;
   color: green;
   font-size: 30px;
-  background-color: black;
+  background-color: rgb(36, 32, 32);
 }
 span{
   color: white;
@@ -17,5 +17,20 @@ button{
   font-size: 15px;
 }
 #header{
-  color: white;
+  color: black;
+}
+.movie_form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px;
+  border-radius: 30%;
+  border-color: black;
+  border: 1px;
+}
+.likes{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  font-size: 15px;
 }
