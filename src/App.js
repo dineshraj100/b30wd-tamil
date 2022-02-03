@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import { NoEncryption } from "@mui/icons-material";
 export default function App() {
   const movie=[
     {
@@ -97,13 +98,20 @@ export default function App() {
   );
 }
 function Name({ name, poster,summary,cast,director,music,year,rating }) {
+  const [show,setShow]= useState(true);
+  const styles={
+    display: show? "block" : "none",
+  };
   return (
     <div className="name">
       <br></br>
       <img src={poster} width="300" />
       <ul>Movie name: <span>{name}</span></ul>
       <ul>Year of Release: <span>{year}</span></ul>
-      <ul>Summary: <span>{summary}</span></ul>
+      <Button variant="contained" onClick={()=> setShow(!show)}>Toggle Summary</Button>
+      <div className="toggle" style={styles}>
+        <ul>Summary: <span>{summary}</span></ul>
+      </div>
       <ul>Cast: <span>{cast}</span></ul>
       <ul>Director: <span>{director}</span></ul>
       <ul>Music By:<span>{music}</span></ul>
