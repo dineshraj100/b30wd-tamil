@@ -2,7 +2,10 @@ import "./App.css";
 import { useState } from "react";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import { NoEncryption } from "@mui/icons-material";
+import IconButton from '@mui/material/IconButton';
+import Badge from '@mui/material/Badge';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 export default function App() {
   const movie=[
     {
@@ -108,9 +111,11 @@ function Name({ name, poster,summary,cast,director,music,year,rating }) {
       <img src={poster} width="300" />
       <ul>Movie name: <span>{name}</span></ul>
       <ul>Year of Release: <span>{year}</span></ul>
-      <Button variant="contained" onClick={()=> setShow(!show)}>Toggle Summary</Button>
+      <ul>Summary <IconButton color="primary" aria-label="Toggle summary" onClick={()=> setShow(!show)}>
+         {show ? < ExpandLessIcon/> : <ExpandMoreIcon/>}
+      </IconButton></ul>
       <div className="toggle" style={styles}>
-        <ul>Summary: <span>{summary}</span></ul>
+        <ul><span>{summary}</span></ul>
       </div>
       <ul>Cast: <span>{cast}</span></ul>
       <ul>Director: <span>{director}</span></ul>
@@ -126,8 +131,8 @@ function Counter(){
   const[dislike, setDislike]= useState(0);
   return(
     <div className="likes">
-      <Button variant="contained" color="error" onClick={()=> setLike(like+1)}>👍🏻 {like}</Button>
-      <Button variant="contained" color="error" onClick={()=> setDislike(dislike+1)}>👎🏻 {dislike}</Button>
+      <IconButton aria-label="like button"  color="primary" onClick={()=> setLike(like+1)}><Badge badgeContent={like} color="primary">👍🏻</Badge></IconButton>
+      <IconButton aria-label="dislike button"  color="error" onClick={()=> setDislike(dislike+1)}><Badge badgeContent={dislike} color="error">👎🏻</Badge></IconButton>
     </div> 
   );
 }
